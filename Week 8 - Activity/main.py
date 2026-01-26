@@ -1,11 +1,5 @@
 """
-CityBikeGo Analytics – Skeleton Script
-
-This script is a starting point for:
-    Customer analysis with sets
-    Booking representation with tuples
-    Station and customer statistics with dictionaries
-    Conversions between data structures
+CityBikeGo
 """
 
 
@@ -136,11 +130,7 @@ def showBookingTupleUsage(bookingData):
         print("First booking station:", firstStation)
         print("Unpacked booking:", customerId, stationName, dayType, durationHours)
 
-    # TODO:
-    #    Add any further tuple operations you want to demonstrate.
-    #    Optionally convert:
-    #           list of tuples to a set of tuples
-    #           set of tuples into another structure later (for dictionary use).
+    
 
 
 # =====================================
@@ -168,7 +158,7 @@ def buildStationStats(bookingData):
     for booking in bookingData:
         customerId, stationName, dayType, durationHours = booking
 
-        # Use get or setdefault for stationCounts
+   
         currentCount = stationCounts.get(stationName, 0)
         stationCounts[stationName] = currentCount + 1
 
@@ -176,10 +166,7 @@ def buildStationStats(bookingData):
         customerSetForStation = stationCustomerSet.setdefault(stationName, set())
         customerSetForStation.add(customerId)
 
-    # TODO:
-    # At some point, demonstrate:
-    #   stationCounts.keys(), values(), items()
-    #   possibly convert keys or items to list or set.
+ 
     return stationCounts, stationCustomerSet
 
 
@@ -202,7 +189,7 @@ def buildCustomerStats(bookingData):
     for booking in bookingData:
         customerId, stationName, dayType, durationHours = booking
 
-        # Use get or setdefault to update total hours
+      
         currentHours = customerHours.get(customerId, 0)
         customerHours[customerId] = currentHours + durationHours
 
@@ -419,5 +406,6 @@ def plotCustomerHours(customerHours):
 
 
     plt.show()
+
 
 """
